@@ -29,5 +29,22 @@ createApp({
                 this.activeIndex++;
             }
         }
+    },
+
+    created(){
+        console.log('Loading our application...');
+    },
+
+    beforeMount(){
+        console.log('Mounting our application...');
+    },
+
+    beforeUpdate(){
+        console.log('Updating our application...');
+    },
+
+    updated(){
+        console.log('Our application has been updated...');
     }
+
 }).mount('#app');
