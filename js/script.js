@@ -12,6 +12,7 @@ createApp({
                 'https://www.themoviedb.org/t/p/w500/pWBgjkG8ASvYnrql3tbjMo0d8tk.jpg'
             ],
             activeIndex : 0,
+            autoplay: false,
         }
     },
     methods: {
@@ -36,11 +37,29 @@ createApp({
             }
 
             this.activeIndex = slideIndex;
+        },
+
+        startAutoplay(){
+            if (!this.autoplay){
+                this.autoplay = setInterval(this.nextSlide, 3000);
+                console.log('autoplay started');
+            } else {
+                console.warn('Autoplay is already active');
+            }
+        },
+
+        stopAutoplay(){
+            if (!this.autoplay ){
+                console.warn('There is no autoplay to stop');
+            } else {
+                console.log('autoplay cleared');
+                clearInterval(this.autoplay);
+                this.autoplay = false;
+            }
         }
     },
-
     mounted(){
-
+        this.startAutoplay();
     },
 
 }).mount('#app');
