@@ -25,7 +25,7 @@
                 <div class="slide">
                     <img :src="images[activeIndex]" alt="Mandalorian picture">
                     <div class="thumbnails">
-                        <div class="thumbnail" v-for="(image, index) in images">
+                        <div class="thumbnail" v-for="(image, index) in images" @click="goToSlide(index)">
                             <img :src="image" alt="Mandalorian thumbnail"
                             :class="index === activeIndex ? 'active' : ''" >
                         </div>

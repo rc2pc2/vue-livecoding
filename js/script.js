@@ -28,23 +28,19 @@ createApp({
             } else {
                 this.activeIndex++;
             }
+        },
+
+        goToSlide(slideIndex){
+            if (slideIndex >= this.images.length || slideIndex < 0){
+                return 0;
+            }
+
+            this.activeIndex = slideIndex;
         }
     },
 
-    created(){
-        console.log('Loading our application...');
-    },
+    mounted(){
 
-    beforeMount(){
-        console.log('Mounting our application...');
     },
-
-    beforeUpdate(){
-        console.log('Updating our application...');
-    },
-
-    updated(){
-        console.log('Our application has been updated...');
-    }
 
 }).mount('#app');
